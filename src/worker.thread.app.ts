@@ -15,7 +15,6 @@ class WorkerThreadApp {
       const worker = new Worker(workerJs);
 
       worker.on('message', (data) => {
-        console.log(data);
         computed += 1;
         if (computed === this.count) {
           console.timeEnd('multi threads');
